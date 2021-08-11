@@ -1,0 +1,22 @@
+{
+    "gold": "fcba03",
+    "green": "00ff00",
+    "red": "ff0000",
+    "blue": "0000ff",
+    "yellow": "ffff00",
+    "orange": "ffa500",
+    "pink": "f47fff",
+    "purpledark": "#6a006a",
+    "purplemedium": "#a958a5",
+    "purplelight": "#c481fb",
+    "reddark": "#8e2430",
+    "redlight": "#ff0000",
+    "bluedark": "#3b5998",
+    "cyan": "#5780cd",
+    "bluelight": "#ace9e7",
+    "aqua": "#33a1ee",
+    "greendark": "#2ac075",
+    "greenlight": "#a1ee33",
+    "white": "#f9f9f6",
+    "cream": "#ffdab9"
+}
