@@ -6,6 +6,7 @@
             if (!message.guild.me.hasPermission("MANAGE_ROLES")) return message.channel.send("**Je n'est pas la permissions pour ajouter le rôle a l'utilisateur! - [MANAGE_ROLES]**");
             
             if (!args[0]) return message.channel.send("**Veuillez mentionner le rôle! 🤖**")
+            console.log("ready")
     
             let rMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase());
             if (!rMember) return message.channel.send("**Veuillez mentionner le membre!**");
