@@ -3,7 +3,6 @@ Bonjour/Bonsoir.
 
 tout les npm : 
 
-    "alexa-bot-api"
     "anti-raid"
     "axios"
     "chalk"
