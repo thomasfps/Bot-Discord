@@ -4,7 +4,19 @@ module.exports.run = async(bot, message, args) => {
 
     message.delete();
 
-    if (message.author.id !== "562667788645171201") return message.channel.send(`Vous n'avez pas la permission.`);
+    run: async(client, message, args) => {
+      
+
+        if(message.author.id !== whitelist.id && 
+           message.author.id !== whitelist.id2 && 
+           message.author.id !== whitelist.id3 && 
+           message.author.id !== whitelist.id4 && 
+           message.author.id !== whitelist.id5 && 
+           message.author.id !== whitelist.id6 && 
+           message.author.id !== whitelist.id7 && 
+           message.author.id !== whitelist.id8 && 
+           message.author.id !== whitelist.id9) return;  
+        }
 
     let bicon = bot.user.displayAvatarURL();
 
@@ -21,8 +33,4 @@ module.exports.run = async(bot, message, args) => {
         .setThumbnail(bicon)
 
     message.channel.send(botembed);
-}
-
-module.exports.get = {
-    name: "liste"
 }
