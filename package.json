@@ -20,7 +20,7 @@
   "dependencies": {
     "alexa-bot-api": "^2.0.1",
     "anti-raid": "^1.1.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "chalk": "^4.1.0",
     "colors": "^1.4.0",
     "colours": "*",
