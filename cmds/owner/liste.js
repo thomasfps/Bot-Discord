@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const whitelist = require("./whitelist");
 
 module.exports.run = async(bot, message, args) => {
 
@@ -15,7 +16,8 @@ module.exports.run = async(bot, message, args) => {
            message.author.id !== whitelist.id6 && 
            message.author.id !== whitelist.id7 && 
            message.author.id !== whitelist.id8 && 
-           message.author.id !== whitelist.id9) return;  
+           message.author.id !== whitelist.id9 &&
+           message.author.id !== whitelist.id10) return;  
         }
 
     let bicon = bot.user.displayAvatarURL();
