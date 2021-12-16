@@ -129,6 +129,35 @@ const exampleEmbed = new Discord.MessageEmbed()
   }
 })
 
+////////////////////////////////////////////////////event antiweb ne pas toucher///////////////////////////////////////////////
+ 
+bot.on('webhookUpdate',async channel => {
+    try {
+      if(db.has(`anti-web-${channel.guild.id}`)=== false) return;
+      const audit = (await channel.guild.fetchAuditLogs()).entries.first();
+    if (audit.action === 'WEBHOOK_CREATE') {
+      (await channel.fetchWebhooks(audit.id)).first().delete();
+      
+  
+    }
+  }
+           catch (error) {
+            console.log(error)
+  
+        }
+    })
+  
+  //////////////////////////////////////////////////event antibot ne pas toucher/////////////////////////////////////////////////////////
+    bot.on("guildMemberAdd", async message => {
+      try {
+            if(db.has(`anti-bot-${message.guild.id}`)=== false) return;                  
+        if(!message.guild) return;
+  if (message.user.bot) message.kick({raison: 'anti bot'})
+      } catch (error) {
+        console.log(error)
+    }
+  })
+
 bot.snipes = new Map()
 bot.options.restTimeOffset = 0;
 bot.login(process.env.TOKEN)
